@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hackroost</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+      <h1 class="title">hackroost</h1>
+      <h2 class="subtitle">cybersecurity talks on yt</h2>
+
+        <select id="themeSelector">
+            <option value="default">Default</option>
+            <option value="dark">Dark Mode</option>
+            <option value="greyscale">Greyscale Mode</option>
+            <option value="hacker">Hacker Mode</option>
+        </select>
+
+<textarea id="rawList" readonly></textarea>
+<button onclick="copyList()">Copy List</button>
+
+        <ul>
+                <li><a href="https://www.youtube.com/@0xdade">0xdade</a></li>
+                <li><a href="https://www.youtube.com/@AerospaceVillage">Aerospace Village</a></li>
+                <li><a href="https://www.youtube.com/@BlackHatOfficialYT">BlackHat</a></li>
+                <li><a href="https://www.youtube.com/@BlueTeamVillage">BlueTeam Village</a></li>
+                <li><a href="https://www.youtube.com/@BSidesSATX">BSides SATX</a></li>
+                <li><a href="https://www.youtube.com/@BsideslvOrg">BSides Las Vegas</a></li>
+                <li><a href="https://www.youtube.com/@BsidesslcOrg">BSides SLC</a></li>
+                <li><a href="https://www.youtube.com/@Bugcrowd">Bugcrowd</a></li>
+                <li><a href="https://www.youtube.com/@CackalackyCon">CackalackyCon</a></li>
+                <li><a href="https://www.youtube.com/@CareerHackingVillage">Career Hacking Village</a></li>
+                <li><a href="https://www.youtube.com/@CODEBLUE_jp">CodeBlue</a></li>
+                <li><a href="https://www.youtube.com/@cyberthreatintelligencegro8861">Cyber Threat Intelligence Group</a></li>
+                <li><a href="https://www.youtube.com/@cyberwarcon">CYBERWARCON</a></li>
+                <li><a href="https://www.youtube.com/@DEFCONConference">DefCon Conference</a></li>
+                <li><a href="https://www.youtube.com/@DependencyTrack">OWASP Dependency-Track</a></li>
+                <li><a href="https://www.youtube.com/@DeviantOllam">Deviant Ollam</a></li>
+                <li><a href="https://www.youtube.com/@DFRLab">DFRLab</a></li>
+                <li><a href="https://www.youtube.com/@EkoPartyConference">EkoParty Security Conference</a></li>
+                <li><a href="https://www.youtube.com/@eventosowaspmadrid15">OWASP Madrid</a></li>
+                <li><a href="https://www.youtube.com/@FIRSTdotorg">FIRST Org</a></li>
+                <li><a href="https://www.youtube.com/@flashpointintel">FlashPoint Intel</a></li>
+                <li><a href="https://www.youtube.com/@GRIMMCyber">GRIMM Cyber</a></li>
+                <li><a href="https://www.youtube.com/@greynoiseintelligence6008">GreyNoise Intelligence</a></li>
+                <li><a href="https://www.youtube.com/@HACKNYC">HACK NYC</a></li>
+                <li><a href="https://www.youtube.com/@hellasecure6651">Hella Secure</a></li>
+                <li><a href="https://www.youtube.com/@HoneynetOrg">Honeynet Project</a></li>
+                <li><a href="https://www.youtube.com/@hitbsecconf">Hack in the Box Security Conference</a></li>
+                <li><a href="https://www.youtube.com/@introsecconvideos5615">Intro Sec Con</a></li>
+                <li><a href="https://www.youtube.com/@irongeek">Irongeek</a></li>
+                <li><a href="https://www.youtube.com/@lascon3958">LASCON</a></li>
+                <li><a href="https://www.youtube.com/@mitrecorp">MITRE Corporation</a></li>
+                <li><a href="https://www.youtube.com/@Nolacon">Nolacon</a></li>
+                <li><a href="https://www.youtube.com/@nextsecurity9546">NextSecurity</a></li>
+                <li><a href="https://www.youtube.com/@nyinfosec">NY Information Security Meetup</a></li>
+                <li><a href="https://www.youtube.com/@oasis-openOrg">OASIS Open</a></li>
+                <li><a href="https://www.youtube.com/@opencybersecurityalliance710">Open Cybersecurity Alliance</a></li>
+                <li><a href="https://www.youtube.com/@optivinc">Optiv</a></li>
+                <li><a href="https://www.youtube.com/@osintcurious">OSINT Curious</a></li>
+                <li><a href="https://www.youtube.com/@owasp_israel4292">OWASP Israel</a></li>
+                <li><a href="https://www.youtube.com/@owasplondon">OWASP London</a></li>
+                <li><a href="https://www.youtube.com/@owaspmontreal">OWASP Montreal</a></li>
+                <li><a href="https://www.youtube.com/@owasp_ottawa">OWASP Ottawa</a></li>
+                <li><a href="https://www.youtube.com/@owaspgbg">OWASP Göteborg</a></li>
+                <li><a href="https://www.youtube.com/@owaspbayarea5286">OWASP Bay Area</a></li>
+                <li><a href="https://www.youtube.com/@owaspthailandchapter7227">OWASP Thailand</a></li>
+                <li><a href="https://www.youtube.com/@owaspkyiv">OWASP Kyiv</a></li>
+                <li><a href="https://www.youtube.com/@owasplatam">OWASP LATAM</a></li>
+                <li><a href="https://www.youtube.com/@owaspglobal">OWASP</a></li>
+                <li><a href="https://www.youtube.com/@talksdump1104">TalksDump</a></li>
+                <li><a href="https://www.youtube.com/@nyinfosec">NY Information Security Meetup</a></li>
+                <li><a href="https://www.youtube.com/@osintcurious">OSINT Curious</a></li>
+                <li><a href="https://www.youtube.com/@bsideslvOrg">BSides Las Vegas</a></li>
+                <li><a href="https://www.youtube.com/@seckcvids">SecKC</a></li>
+                <li><a href="https://www.youtube.com/@optivinc">Optiv</a></li>
+                <li><a href="https://www.youtube.com/@sociallinksmaltegotransforms">SocialLinks</a></li>
+                <li><a href="https://www.youtube.com/@0xdade">0xdade</a></li>
+                <li><a href="https://www.youtube.com/@blackhatofficialyt">BlackHat</a></li>
+                <li><a href="https://www.youtube.com/@themanyhatsclub1260">TheManyHatsClub</a></li>
+                <li><a href="https://www.youtube.com/@themanyhatsclubtalks7745">TheManyHatsClub Talks</a></li>
+                <li><a href="https://www.youtube.com/@trustedsectv">TrustedSec</a></li>
+                <li><a href="https://www.youtube.com/@codeblue_jp">CodeBlue</a></li>
+                <li><a href="https://www.youtube.com/@sanssecurityawareness">SANS Security Awareness</a></li>
+                <li><a href="https://www.youtube.com/@sansisc">SANS Internet Storm Center</a></li>
+                <li><a href="https://www.youtube.com/@sansoffensiveoperations">SANS Offensive Operations</a></li>
+                <li><a href="https://www.youtube.com/@thesanscyberdefensenetwork1819">SANS Cyberdefense Network</a></li>
+                <li><a href="https://www.youtube.com/@virusTotal_community">VirusTotal</a></li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

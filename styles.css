@@ -1,0 +1,203 @@
+body {
+    font-family: 'Inconsolata', monospace;
+    transition: background-color 0.3s ease;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background: linear-gradient(270deg, #ffb6b9, #fae3d9, #bbded6, #8acdea, #a2c0fa, #cdbdff, #c58bf2, #e181ac);
+    background-size: 200% 200%;
+    animation: gradientBG 30s infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes jewelBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes greyscaleBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 90%;
+    height: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: 'Inconsolata', monospace;
+    resize: none; /* Disabling resize functionality */
+    margin: 0 auto;
+    display: block;
+}
+
+button, select {
+    font-family: 'Inconsolata', monospace;
+}
+
+.title {
+    font-family: 'ADLaM Display', cursive;
+    text-align: center;
+    font-size: 5em;
+    margin-bottom: 10px;
+}
+
+/* Normal Mode */
+li {
+    list-style-type: none;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    background-color: #f2f2f2;
+}
+
+li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+li a:hover {
+    color: #666;
+}
+
+/* Dark Mode - Jewel Tones */
+body[data-theme='dark'] {
+    background: linear-gradient(270deg, #2b2b3a, #3a3a49, #4a4a59, #5a5a69, #6a6a79, #7a7a89, #8a8a99, #9a9aa9);
+    background-size: 200% 200%;
+    animation: jewelBG 30s infinite;
+    color: #e6e6e6;
+}
+
+body[data-theme='dark'] .container {
+    background-color: rgba(46, 49, 65, 0.8);
+    border-color: #3c4162;
+}
+
+body[data-theme='dark'] li {
+    background-color: #4d5278;
+}
+
+body[data-theme='dark'] li a {
+    color: #6a6a79;
+}
+
+body[data-theme='dark'] li a:hover {
+    color: #e6e6e6;
+}
+
+body[data-theme='dark'] button,
+body[data-theme='dark'] select {
+    background-color: #4d5278;
+    color: #e6e6e6;
+}
+
+/* Greyscale Mode */
+body[data-theme='greyscale'] {
+    background: linear-gradient(270deg, #000000, #333333, #555555, #777777, #999999, #bbbbbb, #dddddd, #ffffff);
+    background-size: 200% 200%;
+    animation: greyscaleBG 30s infinite;
+    color: #333;
+}
+
+body[data-theme='greyscale'] .container {
+    background-color: rgba(200, 200, 200, 0.8);
+    border-color: #aaa;
+}
+
+body[data-theme='greyscale'] li {
+    background-color: #e0e0e0;
+}
+
+body[data-theme='greyscale'] li a {
+    color: #000;
+}
+
+body[data-theme='greyscale'] li a:hover {
+    color: #555;
+}
+
+body[data-theme='greyscale'] button,
+body[data-theme='greyscale'] select {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+/* Hacker Mode */
+body[data-theme='hacker'] {
+    background: #000000;
+    color: #00ff00;
+}
+
+body[data-theme='hacker'] .container {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-color: #00ff00;
+}
+
+body[data-theme='hacker'] li {
+    background-color: #000000;
+    border: 1px solid #00ff00;
+}
+
+body[data-theme='hacker'] li a {
+    color: #00ff00;
+}
+
+body[data-theme='hacker'] li a:hover {
+    color: #00aa00;
+}
+
+body[data-theme='hacker'] button,
+body[data-theme='hacker'] select {
+    background-color: #000000;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+}
