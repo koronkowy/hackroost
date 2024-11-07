@@ -11,39 +11,9 @@ body {
 }
 
 @keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-@keyframes jewelBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-@keyframes greyscaleBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .container {
@@ -54,150 +24,157 @@ body {
     border-radius: 10px;
     border: 1px solid #ccc;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
     text-align: center;
-    margin-bottom: 20px;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-textarea {
-    width: 90%;
-    height: 200px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-family: 'Inconsolata', monospace;
-    resize: none; /* Disabling resize functionality */
-    margin: 0 auto;
-    display: block;
-}
-
-button, select {
-    font-family: 'Inconsolata', monospace;
 }
 
 .title {
     font-family: 'ADLaM Display', cursive;
-    text-align: center;
     font-size: 5em;
     margin-bottom: 10px;
 }
 
-/* Normal Mode */
-li {
+.subtitle {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.subtitle a {
+    color: #0078D4;
+    text-decoration: none;
+}
+
+.subtitle a:hover {
+    text-decoration: underline;
+}
+
+/* Controls styling for theme selector and search bar */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Search bar styling */
+#searchBar {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 10pt;
+}
+
+/* Wrapper around text area and button for alignment */
+.copy-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px; /* Space between button and text area */
+    width: 95%; /* Matches the width of #rawList */
+    margin: 0 auto 10px; /* Centers the container */
+}
+
+/* Raw list text area styling */
+#rawList {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: 'Inconsolata', monospace;
+    resize: none; /* Disables manual resizing */
+    box-sizing: border-box;
+}
+
+/* Copy Raw button styling */
+button {
+    padding: 8px 12px;
+    font-family: 'Inconsolata', monospace;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f2f2f2;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Channel List Grid Layout */
+ul {
     list-style-type: none;
-    margin-bottom: 10px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+ul li {
     padding: 10px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
     background-color: #f2f2f2;
+    text-align: center;
 }
 
-li a {
+ul li a {
     text-decoration: none;
     color: #333;
     transition: color 0.3s ease;
 }
 
-li a:hover {
+ul li a:hover {
     color: #666;
 }
 
-/* Dark Mode - Jewel Tones */
-body[data-theme='dark'] {
+/* Default Theme */
+.default { background: linear-gradient(270deg, #ffb6b9, #fae3d9, #bbded6, #8acdea, #a2c0fa, #cdbdff, #c58bf2, #e181ac); }
+.default .container { background-color: rgba(255, 255, 255, 0.8); border-color: #ccc; }
+
+/* Dark Theme */
+.dark {
     background: linear-gradient(270deg, #2b2b3a, #3a3a49, #4a4a59, #5a5a69, #6a6a79, #7a7a89, #8a8a99, #9a9aa9);
-    background-size: 200% 200%;
-    animation: jewelBG 30s infinite;
     color: #e6e6e6;
 }
 
-body[data-theme='dark'] .container {
-    background-color: rgba(46, 49, 65, 0.8);
-    border-color: #3c4162;
-}
+.dark .container { background-color: rgba(46, 49, 65, 0.8); border-color: #3c4162; }
+.dark ul li { background-color: #4d5278; color: #e6e6e6; }
+.dark ul li a { color: #6a6a79; }
+.dark ul li a:hover { color: #e6e6e6; }
 
-body[data-theme='dark'] li {
-    background-color: #4d5278;
-}
-
-body[data-theme='dark'] li a {
-    color: #6a6a79;
-}
-
-body[data-theme='dark'] li a:hover {
-    color: #e6e6e6;
-}
-
-body[data-theme='dark'] button,
-body[data-theme='dark'] select {
-    background-color: #4d5278;
-    color: #e6e6e6;
-}
-
-/* Greyscale Mode */
-body[data-theme='greyscale'] {
+/* Greyscale Theme */
+.greyscale {
     background: linear-gradient(270deg, #000000, #333333, #555555, #777777, #999999, #bbbbbb, #dddddd, #ffffff);
-    background-size: 200% 200%;
-    animation: greyscaleBG 30s infinite;
     color: #333;
 }
 
-body[data-theme='greyscale'] .container {
-    background-color: rgba(200, 200, 200, 0.8);
-    border-color: #aaa;
-}
+.greyscale .container { background-color: rgba(200, 200, 200, 0.8); border-color: #aaa; }
+.greyscale ul li { background-color: #e0e0e0; color: #333; }
+.greyscale ul li a { color: #000; }
+.greyscale ul li a:hover { color: #555; }
 
-body[data-theme='greyscale'] li {
-    background-color: #e0e0e0;
-}
-
-body[data-theme='greyscale'] li a {
-    color: #000;
-}
-
-body[data-theme='greyscale'] li a:hover {
-    color: #555;
-}
-
-body[data-theme='greyscale'] button,
-body[data-theme='greyscale'] select {
-    background-color: #e0e0e0;
-    color: #333;
-}
-
-/* Hacker Mode */
-body[data-theme='hacker'] {
+/* Hacker Theme - Black Background with Green Text */
+.hacker {
     background: #000000;
     color: #00ff00;
 }
 
-body[data-theme='hacker'] .container {
-    background-color: rgba(0, 0, 0, 0.8);
+.hacker .container {
+    background-color: #000000;
     border-color: #00ff00;
 }
 
-body[data-theme='hacker'] li {
-    background-color: #000000;
-    border: 1px solid #00ff00;
+.hacker ul li {
+    background-color: #000000; /* Plain black background */
+    color: #00ff00; /* Green text */
+    border: 1px solid #00ff00; /* Green border */
 }
 
-body[data-theme='hacker'] li a {
-    color: #000000;
-}
-
-body[data-theme='hacker'] li a:hover {
+.hacker ul li a {
     color: #00ff00;
 }
 
-body[data-theme='hacker'] button,
-body[data-theme='hacker'] select {
-    background-color: #000000;
-    border: 1px solid #00ff00;
-    color: #00ff00;
+.hacker ul li a:hover {
+    color: #00ff00; /* Keep hover color consistent */
 }
