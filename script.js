@@ -4,9 +4,14 @@ const pastelColors = [
 ];
 
 const jewelTones = [
-    '#5C47E0', '#7F27C5', '#C88AFA', '#AF2294', '#DB4D8E',
-    '#38D4A4', '#3B2E4C', '#4B3A5A', '#5A4970', '#6A5683', '#7A658E'
+    '#A05DA5', // Purple
+    '#5E93A1', // Teal Blue
+    '#9073A3', // Muted Lavender
+    '#3C4C79', // Deep Blue
+    '#2A1E3C'  // Dark Purple
 ];
+
+const bratGreen = '#8ACE00'; // Consistent brat green
 
 document.addEventListener("DOMContentLoaded", function () {
     loadChannels();
@@ -80,7 +85,7 @@ function getRandomJewelTone() {
 }
 
 function getRandomGreyShade() {
-    const greyValue = Math.floor(Math.random() * 155) + 100; // Lighter shades of grey
+    const greyValue = Math.floor(Math.random() * 155) + 100;
     return `rgb(${greyValue}, ${greyValue}, ${greyValue})`;
 }
 
@@ -89,7 +94,11 @@ function applyListStyles() {
     const listItems = document.querySelectorAll("#channelList li");
 
     listItems.forEach(item => {
-        if (theme === 'hacker') {
+        if (theme === 'brat') {
+            item.style.backgroundColor = bratGreen;
+            item.style.color = 'black';
+            item.style.border = '1px solid black';
+        } else if (theme === 'hacker') {
             item.style.backgroundColor = '#000000';
             item.style.color = '#00ff00';
             item.style.border = '1px solid #00ff00';
@@ -102,10 +111,6 @@ function applyListStyles() {
             item.style.backgroundColor = randomJewelColor;
             item.style.color = '#e6e6e6';
             item.style.border = 'none';
-        } else if (theme === 'brat') {
-            item.style.backgroundColor = '#A4D600';
-            item.style.color = '#000000';
-            item.style.border = '1px solid #000000';
         } else {
             const randomColor = getRandomPastelColor();
             item.style.backgroundColor = randomColor;
@@ -117,13 +122,27 @@ function applyListStyles() {
 
 function changeTheme(theme) {
     document.body.setAttribute("data-theme", theme);
+    const title = document.querySelector(".title");
 
-    // Set specific background color for Brat theme
     if (theme === 'brat') {
-        document.body.style.background = '#A4D600';
+        title.style.fontFamily = 'Arial Narrow, sans-serif';
+        title.style.fontWeight = 'bold';
+        title.style.color = 'black';
+        document.body.style.backgroundColor = bratGreen; // Set solid brat green background
+        document.body.style.backgroundImage = 'none'; // Remove any gradients
     } else {
-        // Reset background for other themes
-        document.body.style.background = '';
+        title.style.fontFamily = "'ADLaM Display', cursive";
+        title.style.fontWeight = 'normal';
+
+        if (theme === 'hacker') {
+            title.style.color = '#00ff00'; // Cyber green for hacker theme
+            document.body.style.backgroundColor = '#000000';
+            document.body.style.backgroundImage = 'none';
+        } else {
+            title.style.color = ''; // Default color
+            document.body.style.backgroundImage = ''; // Restore gradient
+            document.body.style.backgroundColor = '';
+        }
     }
 
     applyListStyles();

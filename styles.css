@@ -37,11 +37,10 @@ body {
 
 /* Title and Subtitle */
 .title {
-    font-family: 'Arial Narrow', sans-serif;
+    font-family: 'ADLaM Display', cursive; /* Default font for all themes except Brat */
     text-align: center;
     font-size: 3.5em;
     margin-bottom: 10px;
-    font-weight: 700;
 }
 
 .subtitle {
@@ -181,6 +180,46 @@ body[data-theme='hacker'] select {
     color: #00ff00;
 }
 
+/* Brat Theme */
+body[data-theme='brat'] {
+    background-color: #8ACE00 !important; /* Brat green background */
+    color: black;
+}
+
+body[data-theme='brat'] .title {
+    font-family: 'Arial Narrow', sans-serif; /* Use Arial Narrow in Brat theme */
+    color: black;
+}
+
+body[data-theme='brat'] .container {
+    background-color: #8ACE00;
+    border: 2px solid black;
+}
+
+body[data-theme='brat'] li {
+    background-color: #8ACE00;
+    color: black;
+    border: 1px solid black;
+}
+
+body[data-theme='brat'] a {
+    color: black;
+}
+
+body[data-theme='brat'] button,
+body[data-theme='brat'] select,
+body[data-theme='brat'] #searchBar,
+body[data-theme='brat'] #rawList {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+
+/* Ensure ADLaM Display font for title in all themes except Brat */
+body:not([data-theme='brat']) .title {
+    font-family: 'ADLaM Display', cursive;
+}
+
 /* Dark Mode Link Styles */
 body[data-theme='dark'] a {
     color: #e6e6e6; /* Light color for better readability */
@@ -188,38 +227,4 @@ body[data-theme='dark'] a {
 
 body[data-theme='dark'] a:visited {
     color: #b0b0b0; /* Light gray for visited links to differentiate but still readable */
-}
-
-/* Brat Theme */
-body[data-theme='brat'] {
-    background-color: #A7E20E; /* Brat green */
-    color: #000000; /* Black text */
-}
-
-body[data-theme='brat'] .title {
-    color: #000000; /* Black title */
-    font-family: 'Arial Narrow', sans-serif;
-}
-
-body[data-theme='brat'] .container {
-    background-color: #A7E20E; /* Same green background for container */
-    border: 2px solid #000000; /* Black border around container */
-}
-
-body[data-theme='brat'] .copy-container button,
-body[data-theme='brat'] .copy-container textarea,
-body[data-theme='brat'] .controls input[type="text"] {
-    background-color: #FFFFFF; /* White background for input elements */
-    border: 1px solid #000000; /* Black border for buttons and inputs */
-    color: #000000; /* Black text for inputs */
-}
-
-body[data-theme='brat'] li {
-    background-color: #A7E20E; /* Brat green for channel items */
-    color: #000000; /* Black text */
-    border: 1px solid #000000; /* Black borders around items */
-}
-
-body[data-theme='brat'] li a {
-    color: #000000; /* Black links */
 }
