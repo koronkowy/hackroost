@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: 'Inconsolata', monospace;
     transition: background-color 0.3s ease;
@@ -10,12 +11,20 @@ body {
     animation: gradientBG 30s infinite;
 }
 
+/* Animated Backgrounds */
 @keyframes gradientBG {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
+@keyframes jewelBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Container */
 .container {
     max-width: 800px;
     margin: 40px auto;
@@ -24,31 +33,23 @@ body {
     border-radius: 10px;
     border: 1px solid #ccc;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
 }
 
+/* Title and Subtitle */
 .title {
-    font-family: 'ADLaM Display', cursive;
-    font-size: 5em;
+    font-family: 'Arial Narrow', sans-serif;
+    text-align: center;
+    font-size: 3.5em;
     margin-bottom: 10px;
+    font-weight: 700;
 }
 
 .subtitle {
-    font-size: 1em;
-    color: #666;
+    text-align: center;
     margin-bottom: 20px;
 }
 
-.subtitle a {
-    color: #0078D4;
-    text-decoration: none;
-}
-
-.subtitle a:hover {
-    text-decoration: underline;
-}
-
-/* Controls styling for theme selector and search bar */
+/* Controls for theme and search */
 .controls {
     display: flex;
     justify-content: center;
@@ -56,125 +57,169 @@ body {
     margin-bottom: 20px;
 }
 
-/* Search bar styling */
-#searchBar {
-    width: 50%;
+select, input[type="text"] {
     padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 10pt;
+    font-family: 'Inconsolata', monospace;
 }
 
-/* Wrapper around text area and button for alignment */
+/* Copy container */
 .copy-container {
     display: flex;
+    gap: 10px;
     align-items: center;
-    justify-content: flex-start;
-    gap: 10px; /* Space between button and text area */
-    width: 95%; /* Matches the width of #rawList */
-    margin: 0 auto 10px; /* Centers the container */
 }
 
-/* Raw list text area styling */
-#rawList {
-    flex-grow: 1;
+.copy-container button {
+    font-family: 'Inconsolata', monospace;
+    margin-left: auto;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
     font-family: 'Inconsolata', monospace;
-    resize: none; /* Disables manual resizing */
-    box-sizing: border-box;
+    resize: none;
 }
 
-/* Copy Raw button styling */
-button {
-    padding: 8px 12px;
-    font-family: 'Inconsolata', monospace;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #f2f2f2;
-    transition: background-color 0.3s ease;
+/* Channel List Items */
+#channelList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Compact spacing */
+    justify-content: flex-start;
 }
 
-button:hover {
-    background-color: #e0e0e0;
-}
-
-/* Channel List Grid Layout */
-ul {
+li {
     list-style-type: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-}
-
-ul li {
-    padding: 10px;
+    padding: 8px 12px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-    background-color: #f2f2f2;
+    display: inline-block;
     text-align: center;
 }
 
-ul li a {
+li a {
     text-decoration: none;
-    color: #333;
-    transition: color 0.3s ease;
+    color: inherit;
 }
 
-ul li a:hover {
-    color: #666;
-}
-
-/* Default Theme */
-.default { background: linear-gradient(270deg, #ffb6b9, #fae3d9, #bbded6, #8acdea, #a2c0fa, #cdbdff, #c58bf2, #e181ac); }
-.default .container { background-color: rgba(255, 255, 255, 0.8); border-color: #ccc; }
-
-/* Dark Theme */
-.dark {
+/* Dark Mode - Jewel Tones */
+body[data-theme='dark'] {
     background: linear-gradient(270deg, #2b2b3a, #3a3a49, #4a4a59, #5a5a69, #6a6a79, #7a7a89, #8a8a99, #9a9aa9);
+    background-size: 200% 200%;
+    animation: jewelBG 30s infinite;
     color: #e6e6e6;
 }
 
-.dark .container { background-color: rgba(46, 49, 65, 0.8); border-color: #3c4162; }
-.dark ul li { background-color: #4d5278; color: #e6e6e6; }
-.dark ul li a { color: #6a6a79; }
-.dark ul li a:hover { color: #e6e6e6; }
+body[data-theme='dark'] .title,
+body[data-theme='dark'] .subtitle {
+    color: #e6e6e6;
+}
 
-/* Greyscale Theme */
-.greyscale {
+body[data-theme='dark'] .container {
+    background-color: rgba(46, 49, 65, 0.8);
+    border-color: #3c4162;
+}
+
+body[data-theme='dark'] li {
+    background-color: #4d5278;
+    color: #e6e6e6;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+/* Greyscale Mode */
+body[data-theme='greyscale'] {
     background: linear-gradient(270deg, #000000, #333333, #555555, #777777, #999999, #bbbbbb, #dddddd, #ffffff);
+    background-size: 200% 200%;
+    animation: greyscaleBG 30s infinite;
     color: #333;
 }
 
-.greyscale .container { background-color: rgba(200, 200, 200, 0.8); border-color: #aaa; }
-.greyscale ul li { background-color: #e0e0e0; color: #333; }
-.greyscale ul li a { color: #000; }
-.greyscale ul li a:hover { color: #555; }
+body[data-theme='greyscale'] .container {
+    background-color: rgba(200, 200, 200, 0.8);
+    border-color: #aaa;
+}
 
-/* Hacker Theme - Black Background with Green Text */
-.hacker {
+body[data-theme='greyscale'] li {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+/* Hacker Mode */
+body[data-theme='hacker'] {
     background: #000000;
     color: #00ff00;
 }
 
-.hacker .container {
-    background-color: #000000;
-    border-color: #00ff00;
-}
-
-.hacker ul li {
-    background-color: #000000; /* Plain black background */
-    color: #00ff00; /* Green text */
-    border: 1px solid #00ff00; /* Green border */
-}
-
-.hacker ul li a {
+body[data-theme='hacker'] .title {
     color: #00ff00;
 }
 
-.hacker ul li a:hover {
-    color: #00ff00; /* Keep hover color consistent */
+body[data-theme='hacker'] .container {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-color: #00ff00;
+}
+
+body[data-theme='hacker'] li {
+    background-color: #000000;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+}
+
+body[data-theme='hacker'] li a {
+    color: #00ff00;
+}
+
+body[data-theme='hacker'] button,
+body[data-theme='hacker'] select {
+    background-color: #000000;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+}
+
+/* Dark Mode Link Styles */
+body[data-theme='dark'] a {
+    color: #e6e6e6; /* Light color for better readability */
+}
+
+body[data-theme='dark'] a:visited {
+    color: #b0b0b0; /* Light gray for visited links to differentiate but still readable */
+}
+
+/* Brat Theme */
+body[data-theme='brat'] {
+    background-color: #A7E20E; /* Brat green */
+    color: #000000; /* Black text */
+}
+
+body[data-theme='brat'] .title {
+    color: #000000; /* Black title */
+    font-family: 'Arial Narrow', sans-serif;
+}
+
+body[data-theme='brat'] .container {
+    background-color: #A7E20E; /* Same green background for container */
+    border: 2px solid #000000; /* Black border around container */
+}
+
+body[data-theme='brat'] .copy-container button,
+body[data-theme='brat'] .copy-container textarea,
+body[data-theme='brat'] .controls input[type="text"] {
+    background-color: #FFFFFF; /* White background for input elements */
+    border: 1px solid #000000; /* Black border for buttons and inputs */
+    color: #000000; /* Black text for inputs */
+}
+
+body[data-theme='brat'] li {
+    background-color: #A7E20E; /* Brat green for channel items */
+    color: #000000; /* Black text */
+    border: 1px solid #000000; /* Black borders around items */
+}
+
+body[data-theme='brat'] li a {
+    color: #000000; /* Black links */
 }
