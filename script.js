@@ -23,6 +23,9 @@ function loadChannels() {
     fetch("channels.json")
         .then(response => response.json())
         .then(channels => {
+            // Sort channels alphabetically by name
+            channels.sort((a, b) => a.name.localeCompare(b.name));
+
             const channelList = document.getElementById("channelList");
             channelList.innerHTML = "";
 
