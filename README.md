@@ -1,4 +1,4 @@
-<img width="1252" alt="image" src="https://github.com/koronkowy/hackroost/assets/43873379/77564e78-b94e-4e1e-927f-16f09ad3fe5f">
+<img width="1714" alt="Screenshot 2024-11-06 at 5 50 51 PM" src="https://github.com/user-attachments/assets/3b7641ca-d9d0-4157-bb81-665756cf702c">
 
 
 Hackroost
@@ -17,8 +17,8 @@ Themes
 ===============
 
 Here's all the themes:
-<img width="1252" alt="image" src="https://github.com/koronkowy/hackroost/assets/43873379/77564e78-b94e-4e1e-927f-16f09ad3fe5f">
-<img width="1175" alt="image" src="https://github.com/koronkowy/hackroost/assets/43873379/46b30a41-be41-4a57-b94e-3d4838388b3a">
-<img width="1203" alt="image" src="https://github.com/koronkowy/hackroost/assets/43873379/205cd95f-677e-4a33-a66f-e7c30a94413e">
-<img width="1159" alt="image" src="https://github.com/koronkowy/hackroost/assets/43873379/b053b781-0324-40af-a3c1-c756b7310847">
 
+<img width="1714" alt="Screenshot 2024-11-06 at 5 50 51 PM" src="https://github.com/user-attachments/assets/ae4b8d02-6e45-4681-9a77-92e6d50862ad">
+<img width="1716" alt="Screenshot 2024-11-06 at 5 51 08 PM" src="https://github.com/user-attachments/assets/fb773668-6ad7-47a0-acf6-85285a5ec7e7">
+<img width="1716" alt="Screenshot 2024-11-06 at 5 51 15 PM" src="https://github.com/user-attachments/assets/e399388d-e101-4a29-8fe9-4968b0cd21e5">
+<img width="1718" alt="Screenshot 2024-11-06 at 5 52 10 PM" src="https://github.com/user-attachments/assets/a57cc956-1330-409f-a8b0-e4bc7fd9805d">
