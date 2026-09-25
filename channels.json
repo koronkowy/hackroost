@@ -36,7 +36,8 @@
     },
     {
         "name": "BlackHat",
-        "url": "https://www.youtube.com/@BlackHatOfficialYT"
+        "url": "https://www.youtube.com/@BlackHatOfficialYT",
+        "videoId": "LZkdihOzfe4"
     },
     {
         "name": "Blacks In Cybersecurity",
@@ -84,10 +85,6 @@
         "videoId": "ELhdaxG2Pio"
     },
     {
-        "name": "BSides Belfast",
-        "url": "https://www.youtube.com/@bsidesbelfast7356"
-    },
-    {
         "name": "BSides Berlin",
         "url": "https://www.youtube.com/@bsidesberlin9228",
         "videoId": "rSd9v5EA6sg"
@@ -101,14 +98,6 @@
         "name": "BSides Boston 2",
         "url": "https://www.youtube.com/@BsidesBoston",
         "videoId": "ozZhOdsKB6U"
-    },
-    {
-        "name": "BSides Budapest",
-        "url": "https://www.youtube.com/@bsidesbudapest"
-    },
-    {
-        "name": "BSides Buffalo",
-        "url": "https://www.youtube.com/@bsidesbuffalo1851"
     },
     {
         "name": "BSides Cairo",
@@ -141,10 +130,6 @@
         "videoId": "EHBFmiH8ueA"
     },
     {
-        "name": "BSides Cayman Islands",
-        "url": "https://www.youtube.com/@securitybsidescaymanisland355"
-    },
-    {
         "name": "BSides Charm",
         "url": "https://www.youtube.com/@bsidescharm",
         "videoId": "9y-ZEavuF98"
@@ -153,10 +138,6 @@
         "name": "BSides Cheltenham",
         "url": "https://www.youtube.com/@bsidescheltenham5891",
         "videoId": "zYBhxue2COg"
-    },
-    {
-        "name": "BSides Cheltenham 2",
-        "url": "https://www.youtube.com/@bsidescheltenham8520"
     },
     {
         "name": "BSides Chile",
@@ -179,10 +160,6 @@
         "videoId": "3AKgJR-8De8"
     },
     {
-        "name": "BSides CT",
-        "url": "https://www.youtube.com/@bsidesct606"
-    },
-    {
         "name": "BSides Cymru",
         "url": "https://www.youtube.com/@bsidescymru2723",
         "videoId": "z8GIjk0rfbI"
@@ -194,7 +171,8 @@
     },
     {
         "name": "BSides DC",
-        "url": "https://www.youtube.com/@bsidesdcorganizers4120"
+        "url": "https://www.youtube.com/@bsidesdcorganizers4120",
+        "videoId": "YOkQKV8FUvc"
     },
     {
         "name": "BSides DC 2",
@@ -225,10 +203,6 @@
         "name": "BSides Dundee",
         "url": "https://www.youtube.com/@bsidesdundee2967",
         "videoId": "2qVMVpzh4-o"
-    },
-    {
-        "name": "BSides Edmonton",
-        "url": "https://www.youtube.com/@bsidesedmonton7094"
     },
     {
         "name": "BSides Flood City",
@@ -267,7 +241,8 @@
     },
     {
         "name": "BSides Las Vegas",
-        "url": "https://www.youtube.com/@BsideslvOrg"
+        "url": "https://www.youtube.com/@BsideslvOrg",
+        "videoId": "lxd2rerVsLo"
     },
     {
         "name": "BSides Leeds",
@@ -278,10 +253,6 @@
         "name": "Security BSides London",
         "url": "https://www.youtube.com/@SecuritybsidesOrgUk",
         "videoId": "zSrWwLJYS9c"
-    },
-    {
-        "name": "BSides Luxembourg",
-        "url": "https://www.youtube.com/@bsidesluxembourg9446"
     },
     {
         "name": "BSides Manchester",
@@ -319,14 +290,6 @@
         "videoId": "Q7KAHpBYPLg"
     },
     {
-        "name": "BSides Pakistan",
-        "url": "https://www.youtube.com/@bsidespakistan8451"
-    },
-    {
-        "name": "BSides PDX",
-        "url": "https://www.youtube.com/@bsidesportland7246"
-    },
-    {
         "name": "BSides PDX 2",
         "url": "https://www.youtube.com/@bsidespdx9798",
         "videoId": "k4_hT49la_s"
@@ -335,10 +298,6 @@
         "name": "BSides Perth",
         "url": "https://www.youtube.com/@BSidesPerth",
         "videoId": "us7NRDkCJPQ"
-    },
-    {
-        "name": "BSides Philly",
-        "url": "https://www.youtube.com/@bsidesphilly6593"
     },
     {
         "name": "BSides Prishtina",
@@ -371,10 +330,6 @@
         "videoId": "37ZfeLmogAw"
     },
     {
-        "name": "BSides San Diego",
-        "url": "https://www.youtube.com/@bsidessandiego"
-    },
-    {
         "name": "BSides Scotland",
         "url": "https://www.youtube.com/@bsidesscotland5161",
         "videoId": "PPDUU3ObX88"
@@ -383,10 +338,6 @@
         "name": "BSides Seattle",
         "url": "https://www.youtube.com/@bsidesseattle3784",
         "videoId": "zIvuepYysN0"
-    },
-    {
-        "name": "BSides Singapore",
-        "url": "https://www.youtube.com/@bsidessingapore9382"
     },
     {
         "name": "BSides SLC",
@@ -470,7 +421,8 @@
     },
     {
         "name": "Chaos Computer Club",
-        "url": "https://www.youtube.com/@mediacccde"
+        "url": "https://www.youtube.com/@mediacccde",
+        "videoId": "pfVng5csqyk"
     },
     {
         "name": "Chaos West TV",
@@ -539,7 +491,8 @@
     },
     {
         "name": "DefCon Conference",
-        "url": "https://www.youtube.com/@DEFCONConference"
+        "url": "https://www.youtube.com/@DEFCONConference",
+        "videoId": "WyPmt8CE5L4"
     },
     {
         "name": "OWASP Dependency-Track",
@@ -558,7 +511,8 @@
     },
     {
         "name": "EkoParty Security Conference",
-        "url": "https://www.youtube.com/@EkoPartyConference"
+        "url": "https://www.youtube.com/@EkoPartyConference",
+        "videoId": "6cUGrtMfbgo"
     },
     {
         "name": "FIRST Org",
@@ -576,10 +530,6 @@
         "videoId": "4UKmrrT-Buc"
     },
     {
-        "name": "GreyNoise Intelligence",
-        "url": "https://www.youtube.com/@greynoiseintelligence6008"
-    },
-    {
         "name": "HACK NYC",
         "url": "https://www.youtube.com/@HACKNYC",
         "videoId": "x53MO4xV_QI"
@@ -591,16 +541,13 @@
     },
     {
         "name": "HackersonBoard",
-        "url": "https://www.youtube.com/@HackersOnBoard/"
+        "url": "https://www.youtube.com/@HackersOnBoard/",
+        "videoId": "kJyCRnwO308"
     },
     {
         "name": "Hella Secure",
         "url": "https://www.youtube.com/@hellasecure6651",
         "videoId": "mITn_owGJC4"
-    },
-    {
-        "name": "Honeynet Project",
-        "url": "https://www.youtube.com/@HoneynetOrg"
     },
     {
         "name": "Horizon3 AI",
@@ -623,17 +570,14 @@
         "videoId": "26JXechj9g4"
     },
     {
-        "name": "Irongeek",
-        "url": "https://www.youtube.com/@irongeek"
-    },
-    {
         "name": "ISACA Tanzania Chapter",
         "url": "https://www.youtube.com/@isaca_tz",
         "videoId": "fXsnEdYbBik"
     },
     {
         "name": "Kaspersky",
-        "url": "https://www.youtube.com/@Kaspersky"
+        "url": "https://www.youtube.com/@Kaspersky",
+        "videoId": "EG3EREO7buE"
     },
     {
         "name": "KasperskyTech",
@@ -646,12 +590,9 @@
         "videoId": "wo4y4mRmBiw"
     },
     {
-        "name": "LASCON",
-        "url": "https://www.youtube.com/@lascon3958"
-    },
-    {
         "name": "media.ccc.de",
-        "url": "https://www.youtube.com/@mediacccde"
+        "url": "https://www.youtube.com/@mediacccde",
+        "videoId": "2ipy8Qu12fk"
     },
     {
         "name": "MITRE Corporation",
@@ -700,7 +641,8 @@
     },
     {
         "name": "OWASP",
-        "url": "https://www.youtube.com/@owaspglobal"
+        "url": "https://www.youtube.com/@owaspglobal",
+        "videoId": "HuV4UudxGcc"
     },
     {
         "name": "OWASP Bay Area",
@@ -752,10 +694,6 @@
         "videoId": "t7EYmafaozg"
     },
     {
-        "name": "OWASP Madrid",
-        "url": "https://www.youtube.com/@eventosowaspmadrid15"
-    },
-    {
         "name": "OWASP Montreal",
         "url": "https://www.youtube.com/@owaspmontreal",
         "videoId": "mgkSCPH-VjE"
@@ -766,17 +704,9 @@
         "videoId": "5nlN7pIHXD8"
     },
     {
-        "name": "OWASP Portland",
-        "url": "https://www.youtube.com/@owaspportlandoregon443"
-    },
-    {
         "name": "OWASP Thailand",
         "url": "https://www.youtube.com/@owaspthailandchapter7227",
         "videoId": "IBtVxsdF6Lc"
-    },
-    {
-        "name": "RSA Conference",
-        "url": "https://www.youtube.com/@RSAConference"
     },
     {
         "name": "Recon Village",
@@ -789,21 +719,9 @@
         "videoId": "6O67xxBeYs4"
     },
     {
-        "name": "SocialLinks",
-        "url": "https://www.youtube.com/@sociallinksmaltegotransforms"
-    },
-    {
         "name": "Saintcon",
         "url": "https://www.youtube.com/c/SAINTCON",
         "videoId": "Na1ADYdWotM"
-    },
-    {
-        "name": "SANS EMEA",
-        "url": "https://www.youtube.com/@sansemea413"
-    },
-    {
-        "name": "SANS Security Awareness",
-        "url": "https://www.youtube.com/@sanssecurityawareness"
     },
     {
         "name": "SANS Internet Storm Center",
@@ -832,11 +750,13 @@
     },
     {
         "name": "Snykcon",
-        "url": "https://www.youtube.com/playlist?list=PLQ6IC7glz4-UYj6uCRPCGhyxgppk-7W2V"
+        "url": "https://www.youtube.com/playlist?list=PLQ6IC7glz4-UYj6uCRPCGhyxgppk-7W2V",
+        "videoId": "eU5kCO0s7i4"
     },
     {
         "name": "Snykcon 2021",
-        "url": "https://www.youtube.com/playlist?list=PLQ6IC7glz4-U_UjzEWdcRLbKGJkRHpbZh"
+        "url": "https://www.youtube.com/playlist?list=PLQ6IC7glz4-U_UjzEWdcRLbKGJkRHpbZh",
+        "videoId": "M_DopTkw59c"
     },
     {
         "name": "TalksDump",
