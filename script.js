@@ -64,10 +64,11 @@ function renderChannels(channels) {
             </div>`;
         }
 
+        const displayUrl = channel.url.replace(/^https?:\/\//, '');
         box.innerHTML = `
             ${videoHtml}
             <h2>${channel.name}</h2>
-            <p><strong>Channel:</strong> <a href="${channel.url}" target="_blank">Link</a></p>
+            <p><strong>Channel:</strong> <a href="${channel.url}" target="_blank">${displayUrl}</a></p>
         `;
         // Store name as a data attribute for searching
         box.setAttribute('data-name', channel.name.toLowerCase());
