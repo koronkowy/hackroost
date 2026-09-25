@@ -26,13 +26,13 @@ body {
 
 /* Container */
 .container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 40px auto;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Title and Subtitle */
@@ -48,6 +48,49 @@ body {
     margin-bottom: 20px;
 }
 
+.subtitle a {
+    color: #0078D4;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.subtitle a:hover {
+    text-decoration: underline;
+}
+
+/* Bubbles */
+.bubble-area {
+    display: none;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.bubble-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.close-bubble {
+    color: #555;
+    text-decoration: none;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* Controls for theme and search */
 .controls {
     display: flex;
@@ -59,51 +102,99 @@ body {
 select, input[type="text"] {
     padding: 8px;
     font-family: 'Inconsolata', monospace;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="text"] {
+    width: 60%;
 }
 
 /* Copy container */
 .copy-container {
     display: flex;
-    gap: 10px;
-    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 10px;
 }
 
 .copy-container button {
     font-family: 'Inconsolata', monospace;
-    margin-left: auto;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #f0f0f0;
+    cursor: pointer;
 }
 
 textarea {
     width: 100%;
-    height: 200px;
+    height: 150px;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
     font-family: 'Inconsolata', monospace;
     resize: none;
+    box-sizing: border-box;
 }
 
-/* Channel List Items */
-#channelList {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px; /* Compact spacing */
-    justify-content: flex-start;
+/* Grid Layout for Channel List */
+.channel-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
 }
 
-li {
-    list-style-type: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    display: inline-block;
+.channel-box {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
+    word-wrap: break-word;
+    transition: background-color 0.3s ease;
 }
 
-li a {
-    text-decoration: none;
+.channel-box h2 {
+    margin: 10px 0 5px 0;
+    font-size: 1.2em;
     color: inherit;
 }
+
+.channel-box p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.channel-box a {
+    color: #0078D4;
+    text-decoration: none;
+}
+
+.channel-box a:hover {
+    text-decoration: underline;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    border-radius: 5px;
+    background: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Themes overrides */
 
 /* Dark Mode - Jewel Tones */
 body[data-theme='dark'] {
@@ -118,16 +209,28 @@ body[data-theme='dark'] .subtitle {
     color: #e6e6e6;
 }
 
+body[data-theme='dark'] .subtitle a {
+    color: #8acdea;
+}
+
 body[data-theme='dark'] .container {
-    background-color: rgba(46, 49, 65, 0.8);
+    background-color: rgba(46, 49, 65, 0.9);
     border-color: #3c4162;
 }
 
-body[data-theme='dark'] li {
+body[data-theme='dark'] .bubble-area {
+    background-color: rgba(46, 49, 65, 0.95);
+    border-color: #3c4162;
+}
+
+body[data-theme='dark'] .channel-box {
     background-color: #4d5278;
     color: #e6e6e6;
-    padding: 8px 12px;
-    border-radius: 5px;
+    border-color: #3c4162;
+}
+
+body[data-theme='dark'] .channel-box a {
+    color: #8acdea;
 }
 
 /* Greyscale Mode */
@@ -138,14 +241,16 @@ body[data-theme='greyscale'] {
     color: #333;
 }
 
-body[data-theme='greyscale'] .container {
-    background-color: rgba(200, 200, 200, 0.8);
+body[data-theme='greyscale'] .container,
+body[data-theme='greyscale'] .bubble-area {
+    background-color: rgba(230, 230, 230, 0.9);
     border-color: #aaa;
 }
 
-body[data-theme='greyscale'] li {
+body[data-theme='greyscale'] .channel-box {
     background-color: #e0e0e0;
     color: #333;
+    border-color: #aaa;
 }
 
 /* Hacker Mode */
@@ -154,27 +259,32 @@ body[data-theme='hacker'] {
     color: #00ff00;
 }
 
-body[data-theme='hacker'] .title {
+body[data-theme='hacker'] .title,
+body[data-theme='hacker'] .subtitle,
+body[data-theme='hacker'] .subtitle a {
     color: #00ff00;
 }
 
-body[data-theme='hacker'] .container {
-    background-color: rgba(0, 0, 0, 0.8);
+body[data-theme='hacker'] .container,
+body[data-theme='hacker'] .bubble-area {
+    background-color: rgba(0, 0, 0, 0.9);
     border-color: #00ff00;
 }
 
-body[data-theme='hacker'] li {
+body[data-theme='hacker'] .channel-box {
     background-color: #000000;
     border: 1px solid #00ff00;
     color: #00ff00;
 }
 
-body[data-theme='hacker'] li a {
+body[data-theme='hacker'] .channel-box a {
     color: #00ff00;
 }
 
 body[data-theme='hacker'] button,
-body[data-theme='hacker'] select {
+body[data-theme='hacker'] select,
+body[data-theme='hacker'] input[type="text"],
+body[data-theme='hacker'] textarea {
     background-color: #000000;
     border: 1px solid #00ff00;
     color: #00ff00;
@@ -191,18 +301,23 @@ body[data-theme='brat'] .title {
     color: black;
 }
 
-body[data-theme='brat'] .container {
+body[data-theme='brat'] .container,
+body[data-theme='brat'] .bubble-area {
     background-color: #8ACE00;
     border: 2px solid black;
 }
 
-body[data-theme='brat'] li {
+body[data-theme='brat'] .subtitle a {
+    color: black;
+}
+
+body[data-theme='brat'] .channel-box {
     background-color: #8ACE00;
     color: black;
     border: 1px solid black;
 }
 
-body[data-theme='brat'] a {
+body[data-theme='brat'] .channel-box a {
     color: black;
 }
 
@@ -218,13 +333,4 @@ body[data-theme='brat'] #rawList {
 /* Ensure ADLaM Display font for title in all themes except Brat */
 body:not([data-theme='brat']) .title {
     font-family: 'ADLaM Display', cursive;
-}
-
-/* Dark Mode Link Styles */
-body[data-theme='dark'] a {
-    color: #e6e6e6; /* Light color for better readability */
-}
-
-body[data-theme='dark'] a:visited {
-    color: #b0b0b0; /* Light gray for visited links to differentiate but still readable */
 }

@@ -15,14 +15,41 @@
     <div class="container">
         <!-- Main Title -->
         <h1 class="title">hackroost</h1>
-        <h2 class="subtitle">
+
+        <div class="subtitle">
             Cybersecurity talks on YT 
-                | <a href="https://koronkowy.tumblr.com/" target="_blank">blog</a>
-                | <a href="https://github.com/koronkowy" target="_blank">github</a>
-                | <a href="https://github.com/koronkowy/hackroost">readme</a> 
-                | <a href="https://koronkowy.github.io/terms-list">terms-list</a>
-                | <a href="https://koronkowy.github.io/cyber-jobs">cyber-jobs</a>
-        </h2>
+            | <a onclick="toggleBubble('about-bubble')">[ About ]</a>
+            • <a onclick="toggleBubble('list-bubble')">[ Full List ]</a>
+        </div>
+
+        <div id="about-bubble" class="bubble-area">
+            <div class="bubble-header">
+                <strong>🛡️ About hackroost / Purpose</strong>
+                <a class="close-bubble" onclick="toggleBubble('about-bubble')">[ Hide ]</a>
+            </div>
+            <p>
+                A collection of amazing cybersecurity talks, conferences, and educational channels on YouTube. You can browse, watch, and search through the top talks across the cybersecurity community!
+            </p>
+            <div class="credits" style="margin-top: 15px; border-top: 1px solid #ddd; padding-top: 10px; font-size: 0.9em;">
+                <p style="margin: 5px 0;">
+                    Created by <a href="https://github.com/koronkowy" target="_blank" style="color:#0078D4; text-decoration:none;">Lacey Kasten (koronkowy)</a>.
+                </p>
+                <p style="margin: 5px 0;">
+                    <em>Follow the project or contribute on <a href="https://github.com/koronkowy/hackroost" target="_blank" style="color:#0078D4; text-decoration:none;">GitHub</a>.</em>
+                </p>
+            </div>
+        </div>
+
+        <div id="list-bubble" class="bubble-area">
+            <div class="bubble-header">
+                <strong>📋 Full Raw List</strong>
+                <a class="close-bubble" onclick="toggleBubble('list-bubble')">[ Hide ]</a>
+            </div>
+            <div class="copy-container">
+                <button onclick="copyList()">Copy Raw</button>
+            </div>
+            <textarea id="rawList" readonly></textarea>
+        </div>
 
         <!-- Controls for theme selection and search -->
         <div class="controls">
@@ -37,14 +64,8 @@
             <input type="text" id="searchBar" placeholder="Search for a channel..." />
         </div>
 
-        <!-- Raw list text area and copy button with tight alignment -->
-        <div class="copy-container">
-            <button onclick="copyList()">Copy Raw</button>
-            <textarea id="rawList" readonly></textarea>
-        </div>
-
         <!-- Channel list populated dynamically from channels.json -->
-        <ul id="channelList"></ul>
+        <div id="channelList" class="channel-list"></div>
     </div>
 
     <script src="script.js" defer></script>
