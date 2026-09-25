@@ -13,11 +13,24 @@ const jewelTones = [
 
 const bratGreen = '#8ACE00'; // Consistent brat green
 
+let allChannels = [];
+
 document.addEventListener("DOMContentLoaded", function () {
     loadChannels();
     setupThemeSelector();
     setupSearch();
 });
+
+function toggleBubble(bubbleId) {
+    const el = document.getElementById(bubbleId);
+    const targets = ['about-bubble', 'list-bubble'];
+    targets.forEach(t => {
+        if (t !== bubbleId) {
+            document.getElementById(t).style.display = 'none';
+        }
+    });
+    el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+}
 
 function loadChannels() {
     fetch("channels.json")
@@ -25,49 +38,65 @@ function loadChannels() {
         .then(channels => {
             // Sort channels alphabetically by name
             channels.sort((a, b) => a.name.localeCompare(b.name));
+            allChannels = channels;
 
-            const channelList = document.getElementById("channelList");
-            channelList.innerHTML = "";
-
-            channels.forEach(channel => {
-                const listItem = document.createElement("li");
-                const link = document.createElement("a");
-                link.href = channel.url;
-                link.textContent = channel.name;
-                listItem.appendChild(link);
-                channelList.appendChild(listItem);
-            });
-
+            renderChannels(allChannels);
             populateRawList();
             applyListStyles();
         })
         .catch(error => console.error("Error loading channels:", error));
 }
 
+function renderChannels(channels) {
+    const channelList = document.getElementById("channelList");
+    channelList.innerHTML = "";
+
+    channels.forEach((channel, index) => {
+        const box = document.createElement("div");
+        box.className = "channel-box";
+        box.id = `channel-box-${index}`;
+
+        let videoHtml = "";
+        if (channel.videoId) {
+            videoHtml = `
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/${channel.videoId}" loading="lazy" allowfullscreen></iframe>
+            </div>`;
+        }
+
+        box.innerHTML = `
+            ${videoHtml}
+            <h2>${channel.name}</h2>
+            <p><strong>Channel:</strong> <a href="${channel.url}" target="_blank">Link</a></p>
+        `;
+        // Store name as a data attribute for searching
+        box.setAttribute('data-name', channel.name.toLowerCase());
+        channelList.appendChild(box);
+    });
+}
+
 function setupThemeSelector() {
     const themeSelector = document.getElementById("themeSelector");
     themeSelector.addEventListener("change", function () {
         changeTheme(this.value);
-        applyListStyles();
     });
 }
 
 function setupSearch() {
     const searchBar = document.getElementById("searchBar");
-    searchBar.addEventListener("input", function () {
-        const searchTerm = searchBar.value.toLowerCase();
-        const channels = document.querySelectorAll("#channelList li");
+    searchBar.addEventListener("input", function (event) {
+        const searchTerm = event.target.value.toLowerCase();
+        const channels = document.querySelectorAll(".channel-box");
 
         channels.forEach(channel => {
-            const text = channel.textContent.toLowerCase();
-            channel.style.display = text.includes(searchTerm) ? "" : "none";
+            const name = channel.getAttribute('data-name');
+            channel.style.display = name.includes(searchTerm) ? "" : "none";
         });
     });
 }
 
 function populateRawList() {
-    const listItems = document.querySelectorAll("#channelList li a");
-    const rawList = Array.from(listItems).map(item => `${item.textContent} (${item.href})`).join("\n");
+    const rawList = allChannels.map(item => `${item.name} (${item.url})`).join("\n");
     document.getElementById("rawList").textContent = rawList;
 }
 
@@ -93,14 +122,14 @@ function getRandomGreyShade() {
 }
 
 function applyListStyles() {
-    const theme = document.body.getAttribute("data-theme");
-    const listItems = document.querySelectorAll("#channelList li");
+    const theme = document.body.getAttribute("data-theme") || 'default';
+    const listItems = document.querySelectorAll(".channel-box");
 
     listItems.forEach(item => {
         if (theme === 'brat') {
             item.style.backgroundColor = bratGreen;
             item.style.color = 'black';
-            item.style.border = '1px solid black';
+            item.style.border = '2px solid black';
         } else if (theme === 'hacker') {
             item.style.backgroundColor = '#000000';
             item.style.color = '#00ff00';
@@ -119,6 +148,12 @@ function applyListStyles() {
             item.style.backgroundColor = randomColor;
             item.style.color = isLight(randomColor) ? "black" : "white";
             item.style.border = 'none';
+        }
+
+        // ensure links inherit color appropriately or stand out
+        const link = item.querySelector('a');
+        if (link) {
+            link.style.color = item.style.color;
         }
     });
 }
